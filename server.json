@@ -1,81 +1,754 @@
-{
-  "News": [
-    {"channel_name": "Tspots", "tvg-id": "a1b2c3d4-0001-4000-8000-000000000001", "tvg-name": "Tspots", "tvg-logo": "http://103.60.204.26/static/images/tlogo.jpg", "group-title": "News", "url": "http://103.60.204.26:3255/TSportsHD/index.m3u8", "image": "http://103.60.204.26/static/images/tlogo.jpg"},
-    {"channel_name": "ALL Sports 1", "tvg-id": "a1b2c3d4-0002-4000-8000-000000000002", "tvg-name": "ALL Sports 1", "tvg-logo": "http://103.60.204.26/static/images/fimg1.jpg", "group-title": "News", "url": "http://103.60.204.26:3255/dazn/index.m3u8", "image": "http://103.60.204.26/static/images/fimg1.jpg"},
-    {"channel_name": "ALL Sports 2", "tvg-id": "a1b2c3d4-0003-4000-8000-000000000003", "tvg-name": "ALL Sports 2", "tvg-logo": "http://103.60.204.26/static/images/fimg1.jpg", "group-title": "News", "url": "http://103.60.204.26:3255/EPLchannel1/index.m3u8", "image": "http://103.60.204.26/static/images/fimg1.jpg"},
-    {"channel_name": "JamunaTv", "tvg-id": "a1b2c3d4-0004-4000-8000-000000000004", "tvg-name": "JamunaTv", "tvg-logo": "http://103.60.204.26/static/images/Jamuna%20Tv1664825738.png", "group-title": "News", "url": "http://103.60.204.26:3255/JAMUNATV/index.m3u8", "image": "http://103.60.204.26/static/images/Jamuna%20Tv1664825738.png"},
-    {"channel_name": "Rtv", "tvg-id": "a1b2c3d4-0005-4000-8000-000000000005", "tvg-name": "Rtv", "tvg-logo": "http://103.60.204.26/static/images/images(1).jpg", "group-title": "News", "url": "http://103.60.204.26:3255/RTV/index.m3u8", "image": "http://103.60.204.26/static/images/images(1).jpg"},
-    {"channel_name": "Channel I", "tvg-id": "a1b2c3d4-0006-4000-8000-000000000006", "tvg-name": "Channel I", "tvg-logo": "http://103.60.204.26/static/images/channeli.png", "group-title": "News", "url": "http://103.60.204.26:3255/chnnel-i/index.m3u8", "image": "http://103.60.204.26/static/images/channeli.png"},
-    {"channel_name": "Ch24", "tvg-id": "a1b2c3d4-0007-4000-8000-000000000007", "tvg-name": "Ch24", "tvg-logo": "http://103.60.204.26/static/images/Logo_of_Cha.png", "group-title": "News", "url": "http://103.60.204.26:3255/CH24/index.m3u8", "image": "http://103.60.204.26/static/images/Logo_of_Cha.png"},
-    {"channel_name": "News24", "tvg-id": "a1b2c3d4-0008-4000-8000-000000000008", "tvg-name": "News24", "tvg-logo": "http://103.60.204.26/static/images/news24.png", "group-title": "News", "url": "http://103.60.204.26:3255/NEWS24LIVE/index.m3u8", "image": "http://103.60.204.26/static/images/news24.png"},
-    {"channel_name": "somynews", "tvg-id": "a1b2c3d4-0009-4000-8000-000000000009", "tvg-name": "somynews", "tvg-logo": "http://103.60.204.26/static/images/somoy-news-tv_1.jpg", "group-title": "News", "url": "http://103.60.204.26:3255/somyyt/index.m3u8", "image": "http://103.60.204.26/static/images/somoy-news-tv_1.jpg"},
-    {"channel_name": "Aljazeera", "tvg-id": "a1b2c3d4-0010-4000-8000-000000000010", "tvg-name": "Aljazeera", "tvg-logo": "http://103.60.204.26/static/images/channelssdsd4_profile.jpg", "group-title": "News", "url": "http://103.60.204.26:3255/Aljazeera/index.m3u8", "image": "http://103.60.204.26/static/images/channelssdsd4_profile.jpg"},
-    {"channel_name": "indiatoday", "tvg-id": "a1b2c3d4-0011-4000-8000-000000000011", "tvg-name": "indiatoday", "tvg-logo": "http://103.60.204.26/static/images/images.png", "group-title": "News", "url": "http://103.60.204.26:3255/indiatoday/index.m3u8", "image": "http://103.60.204.26/static/images/images.png"},
-    {"channel_name": "BanglaV", "tvg-id": "a1b2c3d4-0012-4000-8000-000000000012", "tvg-name": "BanglaV", "tvg-logo": "http://103.60.204.26/static/images/Banglavision.png", "group-title": "News", "url": "http://103.60.204.26:3255/BanglaV/index.m3u8", "image": "http://103.60.204.26/static/images/Banglavision.png"},
-    {"channel_name": "EKHONTV", "tvg-id": "a1b2c3d4-0013-4000-8000-000000000013", "tvg-name": "EKHONTV", "tvg-logo": "http://103.60.204.26/static/images/channels4_3434profile.jpg", "group-title": "News", "url": "http://103.60.204.26:3255/EKHONTV/index.m3u8", "image": "http://103.60.204.26/static/images/channels4_3434profile.jpg"},
-    {"channel_name": "Ntv", "tvg-id": "a1b2c3d4-0014-4000-8000-000000000014", "tvg-name": "Ntv", "tvg-logo": "http://103.60.204.26/static/images/channels4_profile.jpg", "group-title": "News", "url": "http://103.60.204.26:3255/NTVLive1/index.m3u8", "image": "http://103.60.204.26/static/images/channels4_profile.jpg"},
-    {"channel_name": "DeshTV", "tvg-id": "a1b2c3d4-0015-4000-8000-000000000015", "tvg-name": "DeshTV", "tvg-logo": "http://103.60.204.26/static/images/ssdsdsd.jpg", "group-title": "News", "url": "http://103.60.204.26:3255/DeshTV/index.m3u8", "image": "http://103.60.204.26/static/images/ssdsdsd.jpg"},
-    {"channel_name": "Atnbd", "tvg-id": "a1b2c3d4-0016-4000-8000-000000000016", "tvg-name": "Atnbd", "tvg-logo": "http://103.60.204.26/static/images/atnbangla.jpg", "group-title": "News", "url": "http://103.60.204.26:3255/getchnk/atnnews/index.m3u8", "image": "http://103.60.204.26/static/images/atnbangla.jpg"},
-    {"channel_name": "Ch9", "tvg-id": "a1b2c3d4-0017-4000-8000-000000000017", "tvg-name": "Ch9", "tvg-logo": "http://103.60.204.26/static/images/channel9.jpg", "group-title": "News", "url": "http://103.60.204.26:3255/ch9_nk/index.m3u8", "image": "http://103.60.204.26/static/images/channel9.jpg"},
-    {"channel_name": "Deeptho", "tvg-id": "a1b2c3d4-0018-4000-8000-000000000018", "tvg-name": "Deeptho", "tvg-logo": "http://103.60.204.26/static/images/deepto.jpg", "group-title": "News", "url": "http://103.60.204.26:3255/deeptho_nk/index.m3u8", "image": "http://103.60.204.26/static/images/deepto.jpg"},
-    {"channel_name": "Ekattor", "tvg-id": "a1b2c3d4-0019-4000-8000-000000000019", "tvg-name": "Ekattor", "tvg-logo": "http://103.60.204.26/static/images/images.jpg", "group-title": "News", "url": "http://103.60.204.26:3255/ekattor_nk/index.m3u8", "image": "http://103.60.204.26/static/images/images.jpg"}
-  ],
-  "Sports": [
-    {"channel_name": "Tspots", "tvg-id": "a1b2c3d4-0020-4000-8000-000000000020", "tvg-name": "Tspots", "tvg-logo": "http://103.60.204.26/static/images/tlogo.jpg", "group-title": "Sports", "url": "http://103.60.204.26:3255/TSportsHD/index.m3u8", "image": "http://103.60.204.26/static/images/tlogo.jpg"},
-    {"channel_name": "ALL Sports 1", "tvg-id": "a1b2c3d4-0021-4000-8000-000000000021", "tvg-name": "ALL Sports 1", "tvg-logo": "http://103.60.204.26/static/images/fimg1.jpg", "group-title": "Sports", "url": "http://103.60.204.26:3255/dazn/index.m3u8", "image": "http://103.60.204.26/static/images/fimg1.jpg"},
-    {"channel_name": "ALL Sports 2", "tvg-id": "a1b2c3d4-0022-4000-8000-000000000022", "tvg-name": "ALL Sports 2", "tvg-logo": "http://103.60.204.26/static/images/fimg1.jpg", "group-title": "Sports", "url": "http://103.60.204.26:3255/EPLchannel1/index.m3u8", "image": "http://103.60.204.26/static/images/fimg1.jpg"},
-    {"channel_name": "Sony Ten 5", "tvg-id": "a1b2c3d4-0023-4000-8000-000000000023", "tvg-name": "Sony Ten 5", "tvg-logo": "http://103.60.204.26/static/images/ea3358b9-2bec-4615-a889-daa2e396c74c.webp", "group-title": "Sports", "url": "http://103.60.204.26:3255/SonyTenSports5/index.m3u8", "image": "http://103.60.204.26/static/images/ea3358b9-2bec-4615-a889-daa2e396c74c.webp"},
-    {"channel_name": "Gtv", "tvg-id": "a1b2c3d4-0024-4000-8000-000000000024", "tvg-name": "Gtv", "tvg-logo": "http://103.60.204.26/static/images/images (7).png", "group-title": "Sports", "url": "http://103.60.204.26:3255/gtv/index.m3u8", "image": "http://103.60.204.26/static/images/images (7).png"},
-    {"channel_name": "Sony Ten 1", "tvg-id": "a1b2c3d4-0025-4000-8000-000000000025", "tvg-name": "Sony Ten 1", "tvg-logo": "http://103.60.204.26/static/images/ea3358b9-2bec-4615-a889-daa2e396c74c.webp", "group-title": "Sports", "url": "http://103.60.204.26:3255/SonytenSports1HD/index.m3u8", "image": "http://103.60.204.26/static/images/ea3358b9-2bec-4615-a889-daa2e396c74c.webp"},
-    {"channel_name": "Sony Ten 2", "tvg-id": "a1b2c3d4-0026-4000-8000-000000000026", "tvg-name": "Sony Ten 2", "tvg-logo": "http://103.60.204.26/static/images/ea3358b9-2bec-4615-a889-daa2e396c74c.webp", "group-title": "Sports", "url": "http://103.60.204.26:3255/SonyTenSports2/index.m3u8", "image": "http://103.60.204.26/static/images/ea3358b9-2bec-4615-a889-daa2e396c74c.webp"},
-    {"channel_name": "EurosportHD", "tvg-id": "a1b2c3d4-0027-4000-8000-000000000027", "tvg-name": "EurosportHD", "tvg-logo": "http://103.60.204.26/static/images/01709bcd-6d53-4710-a64f-bc49cecf1d61.webp", "group-title": "Sports", "url": "http://103.60.204.26:3255/EurosportHD/index.m3u8", "image": "http://103.60.204.26/static/images/01709bcd-6d53-4710-a64f-bc49cecf1d61.webp"},
-    {"channel_name": "Ten Cricket", "tvg-id": "a1b2c3d4-0028-4000-8000-000000000028", "tvg-name": "Ten Cricket", "tvg-logo": "http://103.60.204.26/static/images/795170c2-ec78-457e-9fa0-54a23d23361c.webp", "group-title": "Sports", "url": "http://103.60.204.26:3255/SonyTenCricket/index.m3u8", "image": "http://103.60.204.26/static/images/795170c2-ec78-457e-9fa0-54a23d23361c.webp"},
-    {"channel_name": "TNT 1", "tvg-id": "a1b2c3d4-0029-4000-8000-000000000029", "tvg-name": "TNT 1", "tvg-logo": "http://103.60.204.26/static/images/tnt-sports-logo-png_seeklogo-486966.png", "group-title": "Sports", "url": "http://103.60.204.26:3255/tnt1hd/index.m3u8", "image": "http://103.60.204.26/static/images/tnt-sports-logo-png_seeklogo-486966.png"},
-    {"channel_name": "TNT 2", "tvg-id": "a1b2c3d4-0030-4000-8000-000000000030", "tvg-name": "TNT 2", "tvg-logo": "http://103.60.204.26/static/images/tnt-sports-logo-png_seeklogo-486966.png", "group-title": "Sports", "url": "http://103.60.204.26:3255/tnt2hd/index.m3u8", "image": "http://103.60.204.26/static/images/tnt-sports-logo-png_seeklogo-486966.png"},
-    {"channel_name": "TNT Premium", "tvg-id": "a1b2c3d4-0031-4000-8000-000000000031", "tvg-name": "TNT Premium", "tvg-logo": "http://103.60.204.26/static/images/tnt-sports-logo-png_seeklogo-486966.png", "group-title": "Sports", "url": "http://103.60.204.26:3255/tnthd/index.m3u8", "image": "http://103.60.204.26/static/images/tnt-sports-logo-png_seeklogo-486966.png"},
-    {"channel_name": "Willow HD", "tvg-id": "a1b2c3d4-0032-4000-8000-000000000032", "tvg-name": "Willow HD", "tvg-logo": "http://103.60.204.26/static/images/willow-logo.jpg", "group-title": "Sports", "url": "http://103.60.204.26:3255/willow/index.m3u8", "image": "http://103.60.204.26/static/images/willow-logo.jpg"},
-    {"channel_name": "Skyspots", "tvg-id": "a1b2c3d4-0033-4000-8000-000000000033", "tvg-name": "Skyspots", "tvg-logo": "http://103.60.204.26/static/images/sky-sport-premier-league-logo-png_seeklogo-456293.png", "group-title": "Sports", "url": "http://103.60.204.26:3255/skyspots/index.m3u8", "image": "http://103.60.204.26/static/images/sky-sport-premier-league-logo-png_seeklogo-456293.png"},
-    {"channel_name": "Bein Spots 1", "tvg-id": "a1b2c3d4-0034-4000-8000-000000000034", "tvg-name": "Bein Spots 1", "tvg-logo": "http://103.60.204.26/static/images/unnamed.png", "group-title": "Sports", "url": "http://103.60.204.26:3255/bein1-kh/index.m3u8", "image": "http://103.60.204.26/static/images/unnamed.png"},
-    {"channel_name": "Start Spots 1 HD", "tvg-id": "a1b2c3d4-0035-4000-8000-000000000035", "tvg-name": "Start Spots 1 HD", "tvg-logo": "http://103.60.204.26/static/images/SS_logo.jpg", "group-title": "Sports", "url": "http://103.60.204.26:3255/starthd1/index.m3u8", "image": "http://103.60.204.26/static/images/SS_logo.jpg"}
-  ],
-  "Sportzfy": [
-    {"channel_name": "Sportzfy live", "tvg-id": "a1b2c3d4-0036-4000-8000-000000000036", "tvg-name": "Sportzfy live", "tvg-logo": "http://103.60.204.26/static/images/fimg1.jpg", "group-title": "Sportzfy", "url": "http://103.60.204.26:3255/sportzfy1/index.m3u8", "image": "http://103.60.204.26/static/images/fimg1.jpg"},
-    {"channel_name": "Sportzfy live 2", "tvg-id": "a1b2c3d4-0037-4000-8000-000000000037", "tvg-name": "Sportzfy live 2", "tvg-logo": "http://103.60.204.26/static/images/fimg1.jpg", "group-title": "Sportzfy", "url": "http://103.60.204.26:3255/sportfy-2/index.m3u8", "image": "http://103.60.204.26/static/images/fimg1.jpg"}
-  ],
-  "All Football League": [
-    {"channel_name": "F1", "tvg-id": "a1b2c3d4-0038-4000-8000-000000000038", "tvg-name": "F1", "tvg-logo": "http://103.60.204.26/static/images/5959d93b-72f6-4da2-b788-c220a56823bf.png", "group-title": "All Football League", "url": "http://103.60.204.26:3255/lg1/index.m3u8", "image": "http://103.60.204.26/static/images/5959d93b-72f6-4da2-b788-c220a56823bf.png"},
-    {"channel_name": "F2", "tvg-id": "a1b2c3d4-0039-4000-8000-000000000039", "tvg-name": "F2", "tvg-logo": "http://103.60.204.26/static/images/5959d93b-72f6-4da2-b788-c220a56823bf.png", "group-title": "All Football League", "url": "http://103.60.204.26:3255/lg2/index.m3u8", "image": "http://103.60.204.26/static/images/5959d93b-72f6-4da2-b788-c220a56823bf.png"},
-    {"channel_name": "F3", "tvg-id": "a1b2c3d4-0040-4000-8000-000000000040", "tvg-name": "F3", "tvg-logo": "http://103.60.204.26/static/images/5959d93b-72f6-4da2-b788-c220a56823bf.png", "group-title": "All Football League", "url": "http://103.60.204.26:3255/lg3/index.m3u8", "image": "http://103.60.204.26/static/images/5959d93b-72f6-4da2-b788-c220a56823bf.png"},
-    {"channel_name": "F4", "tvg-id": "a1b2c3d4-0041-4000-8000-000000000041", "tvg-name": "F4", "tvg-logo": "http://103.60.204.26/static/images/5959d93b-72f6-4da2-b788-c220a56823bf.png", "group-title": "All Football League", "url": "http://103.60.204.26:3255/lg4/index.m3u8", "image": "http://103.60.204.26/static/images/5959d93b-72f6-4da2-b788-c220a56823bf.png"},
-    {"channel_name": "F5", "tvg-id": "a1b2c3d4-0042-4000-8000-000000000042", "tvg-name": "F5", "tvg-logo": "http://103.60.204.26/static/images/5959d93b-72f6-4da2-b788-c220a56823bf.png", "group-title": "All Football League", "url": "http://103.60.204.26:3255/lg5/index.m3u8", "image": "http://103.60.204.26/static/images/5959d93b-72f6-4da2-b788-c220a56823bf.png"},
-    {"channel_name": "F7", "tvg-id": "a1b2c3d4-0043-4000-8000-000000000043", "tvg-name": "F7", "tvg-logo": "http://103.60.204.26/static/images/5959d93b-72f6-4da2-b788-c220a56823bf.png", "group-title": "All Football League", "url": "http://103.60.204.26:3255/lg7_p_b1/index.m3u8", "image": "http://103.60.204.26/static/images/5959d93b-72f6-4da2-b788-c220a56823bf.png"},
-    {"channel_name": "F6", "tvg-id": "a1b2c3d4-0044-4000-8000-000000000044", "tvg-name": "F6", "tvg-logo": "http://103.60.204.26/static/images/5959d93b-72f6-4da2-b788-c220a56823bf.png", "group-title": "All Football League", "url": "http://103.60.204.26:3255/lg6_p/index.m3u8", "image": "http://103.60.204.26/static/images/5959d93b-72f6-4da2-b788-c220a56823bf.png"}
-  ],
-  "Ent": [
-    {"channel_name": "ZeeBangla", "tvg-id": "a1b2c3d4-0045-4000-8000-000000000045", "tvg-name": "ZeeBangla", "tvg-logo": "http://103.60.204.26/static/images/6984812b-1c24-43cf-bded-3803c3f17bdd.png", "group-title": "Ent", "url": "http://103.60.204.26:3255/ZeeBangla/index.m3u8", "image": "http://103.60.204.26/static/images/6984812b-1c24-43cf-bded-3803c3f17bdd.png"},
-    {"channel_name": "Star jalsha", "tvg-id": "a1b2c3d4-0046-4000-8000-000000000046", "tvg-name": "Star jalsha", "tvg-logo": "http://103.60.204.26/static/images/starjol.jpeg", "group-title": "Ent", "url": "http://103.60.204.26:3255/star_jolsha/index.m3u8", "image": "http://103.60.204.26/static/images/starjol.jpeg"},
-    {"channel_name": "SonySABHD", "tvg-id": "a1b2c3d4-0047-4000-8000-000000000047", "tvg-name": "SonySABHD", "tvg-logo": "http://103.60.204.26/static/images/0ab48ac0-ec84-4ca2-9601-746ff3cb809e.webp", "group-title": "Ent", "url": "http://103.60.204.26:3255/SonySABHD/index.m3u8", "image": "http://103.60.204.26/static/images/0ab48ac0-ec84-4ca2-9601-746ff3cb809e.webp"},
-    {"channel_name": "ARYDigitalasia", "tvg-id": "a1b2c3d4-0048-4000-8000-000000000048", "tvg-name": "ARYDigitalasia", "tvg-logo": "http://103.60.204.26/static/images/channels4_psrofile.jpg", "group-title": "Ent", "url": "http://103.60.204.26:3255/ARYDigitalasia/index.m3u8", "image": "http://103.60.204.26/static/images/channels4_psrofile.jpg"}
-  ],
-  "Info": [
-    {"channel_name": "Discovery", "tvg-id": "a1b2c3d4-0049-4000-8000-000000000049", "tvg-name": "Discovery", "tvg-logo": "http://103.60.204.26/static/images/6594d216-aaca-4eee-b6f5-bbc6b80feb15.webp", "group-title": "Info", "url": "http://103.60.204.26:3255/Discovery/index.m3u8", "image": "http://103.60.204.26/static/images/6594d216-aaca-4eee-b6f5-bbc6b80feb15.webp"},
-    {"channel_name": "AnimalPlanetHD", "tvg-id": "a1b2c3d4-0050-4000-8000-000000000050", "tvg-name": "AnimalPlanetHD", "tvg-logo": "http://103.60.204.26/static/images/c16e8633-6b2a-401a-9cd6-ac26a4fcdedb.webp", "group-title": "Info", "url": "http://103.60.204.26:3255/AnimalPlanetHD/index.m3u8", "image": "http://103.60.204.26/static/images/c16e8633-6b2a-401a-9cd6-ac26a4fcdedb.webp"},
-    {"channel_name": "TLCHD", "tvg-id": "a1b2c3d4-0051-4000-8000-000000000051", "tvg-name": "TLCHD", "tvg-logo": "http://103.60.204.26/static/images/0973097c-bc5c-4b28-aaca-f04d6f6cb5e2.webp", "group-title": "Info", "url": "http://103.60.204.26:3255/TLCHD/index.m3u8", "image": "http://103.60.204.26/static/images/0973097c-bc5c-4b28-aaca-f04d6f6cb5e2.webp"}
-  ],
-  "Religion": [
-    {"channel_name": "MakkahLive", "tvg-id": "a1b2c3d4-0052-4000-8000-000000000052", "tvg-name": "MakkahLive", "tvg-logo": "http://103.60.204.26/static/images/MakkahLive.jpg", "group-title": "Religion", "url": "http://103.60.204.26:3255/MakkahLive/index.m3u8", "image": "http://103.60.204.26/static/images/MakkahLive.jpg"},
-    {"channel_name": "MedinawithLive", "tvg-id": "a1b2c3d4-0053-4000-8000-000000000053", "tvg-name": "MedinawithLive", "tvg-logo": "http://103.60.204.26/static/images/unnamed(1).png", "group-title": "Religion", "url": "http://103.60.204.26:3255/MedinawithLive1/index.m3u8", "image": "http://103.60.204.26/static/images/unnamed(1).png"}
-  ],
-  "Movie": [
-    {"channel_name": "SonyAath", "tvg-id": "a1b2c3d4-0054-4000-8000-000000000054", "tvg-name": "SonyAath", "tvg-logo": "http://103.60.204.26/static/images/f4db1c12-b10f-46e8-a09b-e0efb8820970.png", "group-title": "Movie", "url": "http://103.60.204.26:3255/SonyAath/index.m3u8", "image": "http://103.60.204.26/static/images/f4db1c12-b10f-46e8-a09b-e0efb8820970.png"},
-    {"channel_name": "SonyEnt", "tvg-id": "a1b2c3d4-0055-4000-8000-000000000055", "tvg-name": "SonyEnt", "tvg-logo": "http://103.60.204.26/static/images/0ab48ac0-ec84-4ca2-9601-746ff3cb809e.webp", "group-title": "Movie", "url": "http://103.60.204.26:3255/SonyEntertainmentTelevisionHD/index.m3u8", "image": "http://103.60.204.26/static/images/0ab48ac0-ec84-4ca2-9601-746ff3cb809e.webp"},
-    {"channel_name": "STARMovies", "tvg-id": "a1b2c3d4-0056-4000-8000-000000000056", "tvg-name": "STARMovies", "tvg-logo": "http://103.60.204.26/static/images/startmovies.png", "group-title": "Movie", "url": "http://103.60.204.26:3255/STARMovies/index.m3u8", "image": "http://103.60.204.26/static/images/startmovies.png"},
-    {"channel_name": "SonyMAX", "tvg-id": "a1b2c3d4-0057-4000-8000-000000000057", "tvg-name": "SonyMAX", "tvg-logo": "http://103.60.204.26/static/images/sonymax.jpeg", "group-title": "Movie", "url": "http://103.60.204.26:3255/SonyMAX/index.m3u8", "image": "http://103.60.204.26/static/images/sonymax.jpeg"},
-    {"channel_name": "Zee Cinema", "tvg-id": "a1b2c3d4-0058-4000-8000-000000000058", "tvg-name": "Zee Cinema", "tvg-logo": "http://103.60.204.26/static/images/zeecenema.jpeg", "group-title": "Movie", "url": "http://103.60.204.26:3255/ZeeCinemaHD/index.m3u8", "image": "http://103.60.204.26/static/images/zeecenema.jpeg"}
-  ],
-  "Kids": [
-    {"channel_name": "CartoonNetwork", "tvg-id": "a1b2c3d4-0059-4000-8000-000000000059", "tvg-name": "CartoonNetwork", "tvg-logo": "http://103.60.204.26/static/images/d2a02d82-fde4-4769-a6d9-95c0560e2120.webp", "group-title": "Kids", "url": "http://103.60.204.26:3255/CartoonNetwork/index.m3u8", "image": "http://103.60.204.26/static/images/d2a02d82-fde4-4769-a6d9-95c0560e2120.webp"},
-    {"channel_name": "POGO", "tvg-id": "a1b2c3d4-0060-4000-8000-000000000060", "tvg-name": "POGO", "tvg-logo": "http://103.60.204.26/static/images/7e7c2afe-a663-4c09-983a-2d0fa0f1ca9a.webp", "group-title": "Kids", "url": "http://103.60.204.26:3255/POGO/index.m3u8", "image": "http://103.60.204.26/static/images/7e7c2afe-a663-4c09-983a-2d0fa0f1ca9a.webp"},
-    {"channel_name": "DiscoveryKids", "tvg-id": "a1b2c3d4-0061-4000-8000-000000000061", "tvg-name": "DiscoveryKids", "tvg-logo": "http://103.60.204.26/static/images/325887a7-84ea-4cf9-a6fd-6111ddc25671.webp", "group-title": "Kids", "url": "http://103.60.204.26:3255/DiscoveryKids/index.m3u8", "image": "http://103.60.204.26/static/images/325887a7-84ea-4cf9-a6fd-6111ddc25671.webp"}
-  ]
-}
+[
+  {
+    "tvg-id": "019de785-3984-7c6c-b734-30d6bb22b3b8",
+    "tvg-name": "Ananda TV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_fb867854a7203c153946b83ab4e972e6_playmist_ananda_tv_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "Ananda TV",
+    "url": "https://tvsen6.aynaott.com/LeUAm4F1iixYns3s3Non/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-396e-7c75-b530-cb197f010279",
+    "tvg-name": "Asian TV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_a5ac9561e182c07073e46bc30b3c8cab_playmist_asian_tv.png",
+    "group-title": "Bangla",
+    "channel_name": "Asian TV",
+    "url": "https://tvsen6.aynaott.com/pKb5k6NnzxsKpWUs6E8M/index.m3u8"
+  },
+  {
+    "tvg-id": "019efa45-ef0a-7e72-86c1-af820f1f22e7",
+    "tvg-name": "ATN Bangla",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-06-28/images_4ff2f8e87d71747b70ab273686c9df9a_playmist_atn_bangla_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "ATN Bangla",
+    "url": "https://tvsen5.aynaott.com/P3y2URgG7LDe/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3947-7f58-bf5b-525377fb71bd",
+    "tvg-name": "ATN News",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_4c788f2e0bc6f83a4fdde6022843368a_playmist_atn_news_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "ATN News",
+    "url": "https://tvsen6.aynaott.com/da6WMXAk/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3974-7dc3-8710-4c1947b08deb",
+    "tvg-name": "Bangla TV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_8fd7517559098b744a0595d094228d8d_playmist_bangla_tv_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "Bangla TV",
+    "url": "https://tvsen6.aynaott.com/39ee93nUbCCmm5LsyD4t/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3957-788f-a366-97dc52d1eced",
+    "tvg-name": "Bangla Vision",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_15c72a2cb794593278c9e7efe4df32d5_playmist_bangla_vision_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "Bangla Vision",
+    "url": "https://tvsen5.aynaott.com/tgUzpPc9r6xw/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-397e-718c-b601-253c31a282eb",
+    "tvg-name": "Bijoy TV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_82c9c8c5aa07c6b94a62cf2ffbe21375_playmist_bijoy_tv_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "Bijoy TV",
+    "url": "https://tvsen6.aynaott.com/N8Xbo5vdwVU6sF43RsW0/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3978-7f99-9708-4a0d34e53511",
+    "tvg-name": "Boishakhi TV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_8a69251df11b66c4e85e7a2fe6d89286_playmist_boishakhi_tv_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "Boishakhi TV",
+    "url": "https://tvsen6.aynaott.com/1d3uG9VCgrR9DRtWZM57/index.m3u8"
+  },
+  {
+    "tvg-id": "019efa45-e602-76d0-b2f0-155f9f2b893d",
+    "tvg-name": "BTV CTG",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-06-24/0cff8323fa888ccb69dde38a6880f150.jpg",
+    "group-title": "Bangla",
+    "channel_name": "BTV CTG",
+    "url": "https://tvsen6.aynaott.com/TjGR1GcxKetHNVcMVxbq/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-393d-736a-baec-46d3bd635fed",
+    "tvg-name": "BTV National",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-04-06/images_25ab94e371e82ccbd0f03b2c7754c712_playmist_btv_national_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "BTV National",
+    "url": "https://tvsen6.aynaott.com/opREbXLqJ2HFYPCXTJBa/index.m3u8"
+  },
+  {
+    "tvg-id": "019efa45-ea1e-7e50-b2fd-32ea3e75ec8c",
+    "tvg-name": "BTV NATIONAL HD",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-06-24/c32c347d7b31cb064ccae43eb331ec94.jpg",
+    "group-title": "Bangla",
+    "channel_name": "BTV NATIONAL HD",
+    "url": "https://tvsen6.aynaott.com/opREbXLqJ2HFYPCXTJBa/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-398d-7a57-87df-bc4eea15b0a4",
+    "tvg-name": "BTV News",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_1b90aebe217ac437da23625feaba0b76_playmist_btv_news400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "BTV News",
+    "url": "https://tvsen6.aynaott.com/tV8mB2zP7rX4kL1w/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3988-7a1c-a527-25de8003964a",
+    "tvg-name": "BTV World",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_9ea3bc79ad1fad76ae1ef2e1dd3c1b42_playmist_btv_world_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "BTV World",
+    "url": "https://tvsen6.aynaott.com/AQLYTPfXtjm5x7zj7AsM/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3943-7dff-ae3b-9b79fed284a3",
+    "tvg-name": "Channel 24",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_82f2d197736c65ee983b3d691ad7c1f3_playmist_channel24.png",
+    "group-title": "Bangla",
+    "channel_name": "Channel 24",
+    "url": "https://tvsen6.aynaott.com/YrVDF8gujkdh/index.m3u8"
+  },
+  {
+    "tvg-id": "019f9d1e-903a-70f7-b217-aabdbdc97163",
+    "tvg-name": "Channel 52",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-26/images_9b7bab426198d5e39dea4b494cad717b_playmist_channel52.jpg",
+    "group-title": "Bangla",
+    "channel_name": "Channel 52",
+    "url": "https://tvsen6.aynaott.com/channel52/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3970-7fa3-a850-d2ca0e07c1e0",
+    "tvg-name": "Channel 9",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_0f3afa480f77dd7d97d49b449a05f3fa_playmist_channel_9_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "Channel 9",
+    "url": "https://tvsen6.aynaott.com/kajlsd57jnzxyo/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3953-7390-925e-0b52e8d2cf6b",
+    "tvg-name": "Channel I",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-01/images_99c9ba1977777337bdc037f79ed921ea_playmist_channel_i_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "Channel I",
+    "url": "https://tvsen6.aynaott.com/FNHpYvGZ7FkCE10PwTHm/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3968-7782-b69b-7c6151ae6fe1",
+    "tvg-name": "DBC News",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_f38ba3f3f90338a11e3004e52cf804af_playmist_dbc_news_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "DBC News",
+    "url": "https://tvsen6.aynaott.com/pF66Tkz0qFwP2aMMqHyt/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3960-7cad-a051-6b707a28890b",
+    "tvg-name": "Deepto TV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-09/images_ebcb173e194bfeede20303e348b80999_playmist_deepto_tv_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "Deepto TV",
+    "url": "https://tvsen5.aynaott.com/tK2BNdfsdfsdf/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3976-7d3f-ba88-3ab13963f65d",
+    "tvg-name": "Desh TV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_c852d6eba40e680a258e9e18aff2d9f2_playmist_desh_tv_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "Desh TV",
+    "url": "https://tvsen6.aynaott.com/ryFkXfd1a4CQ7mMdc820/index.m3u8"
+  },
+  {
+    "tvg-id": "019efa45-db24-7232-933d-0105a23669d7",
+    "tvg-name": "Drama 24",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-06-24/30554e50000b538aef52a9181052af56.jpg",
+    "group-title": "Bangla",
+    "channel_name": "Drama 24",
+    "url": "https://vods2.aynaott.com/gseriesDrama/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3941-7ff1-a7e5-67c5887e9142",
+    "tvg-name": "Ekattor TV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_d5ddbbec6b7919b1003233819616e19b_playmist_ekattor_tv_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "Ekattor TV",
+    "url": "https://tvsen6.aynaott.com/EWDrV5QskgarZEUBb3pU/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3964-7509-9edd-8ad75adc1a89",
+    "tvg-name": "Ekhon TV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_2ae0833e484c0a032e46050cbb8c9cc0_playmist_ekhon_tv_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "Ekhon TV",
+    "url": "https://tvsen6.aynaott.com/fbgZV3X17hwWcyfZ4pdb/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-395b-7132-9cc9-b3571e766644",
+    "tvg-name": "ETV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_0b5269c6ae6e8c382e43c2be02789c60_playmist_etv_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "ETV",
+    "url": "https://tvsen5.aynaott.com/SyQuXz8sC3TB/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3986-7129-aee7-62a7ac202bec",
+    "tvg-name": "Gazi TV",
+    "tvg-logo": "https://s3.aynaott.com/storage/d60be6284234186c03d07a4ad176bcb4",
+    "group-title": "Bangla",
+    "channel_name": "Gazi TV",
+    "url": "https://tvsen5.aynaott.com/Ravc7gPCZpxk/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3980-7029-a5ea-c1e27b34c6d7",
+    "tvg-name": "Global TV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_e58bddfe000aa3e5df9f7c2e90416d90_playmist_global_tv_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "Global TV",
+    "url": "https://tvsen6.aynaott.com/y0q9eFAuquAtvTxRzUHq/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3c1d-7749-b5b4-90c57752071b",
+    "tvg-name": "IBTV USA",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-15/images_ea41ae173647bec89bc348a11f54d718_playmist_ibtv_usa_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "IBTV USA",
+    "url": "https://tvsen7.aynaott.com/ibtvusa/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-396a-7e3b-ae50-1d20c8ce2323",
+    "tvg-name": "Independent TV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_d7df8a2523be6a1fc0c54ddafc046dc2_playmist_independent_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "Independent TV",
+    "url": "https://tvsen6.aynaott.com/Wef2Vj67njeYGDqQNFB9/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3c08-74f1-942b-3613fd2d61cf",
+    "tvg-name": "Iqra Bangla",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-15/images_1e415d048ff6a503320fe9e8cb703345_playmist_iqra_bangla_tv_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "Iqra Bangla",
+    "url": "https://tvsen3.aynaott.com/EuEy5mBW/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3945-77dc-81be-262720b600b9",
+    "tvg-name": "Jamuna TV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_4be60fcb499d59949c222f746ece58f4_playmist_jamuna_tv_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "Jamuna TV",
+    "url": "https://tvsen6.aynaott.com/KGdZEdA7qQ43dmPkgk1j/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-395d-7a37-8097-0780a16dc766",
+    "tvg-name": "Maasranga TV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_9a9da509523ff5fa2e65e262fe3d0125_playmist_maasranga_tv_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "Maasranga TV",
+    "url": "https://tvsen6.aynaott.com/maasrangatv/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3c17-7ee9-9f97-7bc4e8bd84e7",
+    "tvg-name": "MADANI TV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-15/images_b8b896039b6eb685a11aab0b7b4a33d3_playmist_madani_tv_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "MADANI TV",
+    "url": "https://tvsen3.aynaott.com/z24qLsqV/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3c19-7ca9-a496-8d5722d8462b",
+    "tvg-name": "Millennium TV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-15/images_7c80896efca107d25ab23c2582679aad_playmist_millennium_tv_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "Millennium TV",
+    "url": "https://tvsen3.aynaott.com/NXHj9tpa/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-397a-7df0-b523-b00c861be256",
+    "tvg-name": "Mohona TV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_1c2c83a36e990c46964ce6ef25528d84_playmist_mohona_tv400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "Mohona TV",
+    "url": "https://tvsen6.aynaott.com/AkyX5dunzju4cpo26dr7/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3982-77f6-b5ed-24caa6edc4c8",
+    "tvg-name": "My TV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_6131ede1b10602da29f1271fff0cda77_playmist_my_tv_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "My TV",
+    "url": "https://tvsen6.aynaott.com/XMpHaEf0ANBhv8w6NWR7/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3966-7972-9dda-3707d71073ac",
+    "tvg-name": "News 24 BD",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_a401495935874d01a5dcd992c40c3a2d_playmist_news24.png",
+    "group-title": "Bangla",
+    "channel_name": "News 24 BD",
+    "url": "https://tvsen6.aynaott.com/cdgr3tw6WoG7JyRnLbi0/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-397c-7793-918c-acbc11004934",
+    "tvg-name": "NEXUS TV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_7e6104384dddd36f39e1a27fe0a61059_playmist_nexus_tv_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "NEXUS TV",
+    "url": "https://tvsen6.aynaott.com/Epm7WrFa/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3955-7c15-983a-4bc06362816a",
+    "tvg-name": "NTV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-06-28/images_73ae9b4f27a23375a0308a3b222ee649_playmist_ntv_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "NTV",
+    "url": "https://tvsen5.aynaott.com/xV4jEKf3D9zc/index.m3u8"
+  },
+  {
+    "tvg-id": "019efa45-e6cf-77d1-ab66-0528b71c3826",
+    "tvg-name": "NTV Europe",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-06-28/images_7eb39c04f7cf7ab782e6324c484d93e5_playmist_ntv_europe_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "NTV Europe",
+    "url": "https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI2/ntvuk00332211.stream/playlist.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3c0c-70fc-aaf6-d43bf24eb321",
+    "tvg-name": "Peace TV Bangla HD",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-15/images_55fa6cf36df126454996a9e4cf7f8e85_playmist_peace_tv_bangla_hd_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "Peace TV Bangla HD",
+    "url": "https://tvsen3.aynaott.com/RxGdpyu5/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3959-77e1-84fb-723fe5548b8a",
+    "tvg-name": "RTV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_d6c5ece652161d2d88ed547f00343687_playmist_rtv_400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "RTV",
+    "url": "https://tvsen5.aynaott.com/ba47dHpDk3Se/index.m3u8"
+  },
+  {
+    "tvg-id": "019efa45-e84a-7002-baf7-9a04e4d84f16",
+    "tvg-name": "Rupshi Bangla",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-14/images_454ca4e52d414605814d0f4778fd8137_playmist_rupshi_bangla400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "Rupshi Bangla",
+    "url": "https://tvsen6.aynaott.com/a4L7Tcqv/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-396c-7f21-9261-2bd1e5230130",
+    "tvg-name": "SA TV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_b6f2363fef23e117f9a13b7c185ce26c_playmist_satv.png",
+    "group-title": "Bangla",
+    "channel_name": "SA TV",
+    "url": "https://tvsen6.aynaott.com/rELXiuUXqbgzPb06Npom/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-393f-770a-ab0d-525a2d2a00dc",
+    "tvg-name": "Somoy TV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-04-06/images_9ba1cf96ea84cab5ce889111a44e7981_playmist_somoy_news_tv400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "Somoy TV",
+    "url": "https://tvsen7.aynaott.com/Sports4/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-394b-769f-a201-f04269d4b8fb",
+    "tvg-name": "Star News",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-06-28/images_4c8e446a0a7c9f1c28fd6aef2c19132d_playmist_star_news400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "Star News",
+    "url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1710/output/1701.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3962-77a1-8f50-c541bb5a02c7",
+    "tvg-name": "T Sports HD",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-13/images_8b38d691dfaf072e6c964dea814a44ba_playmist_t_sports_hd400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "T Sports HD",
+    "url": "https://tvsen5.aynaott.com/TnMn5kZz8aLmjklkk/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3993-7ccc-8bc0-184c2c761c69",
+    "tvg-name": "Thikana",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-02/images_b9a8bdbfcea2fb4656204d06f615682a_playmist_thikana400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "Thikana",
+    "url": "https://5dd3981940faa.streamlock.net:443/thikanatv/thikanatv/playlist.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3c1b-75c8-a4a5-91373ec4f80a",
+    "tvg-name": "TIME TV USA",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-15/images_c05517a566e36853dc54d325a24921ad_playmist_time_tv_usa400x400.jpg",
+    "group-title": "Bangla",
+    "channel_name": "TIME TV USA",
+    "url": "https://tvsen7.aynaott.com/timetv/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3bc5-70aa-b7d9-555b10cb474f",
+    "tvg-name": "USA TV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-15/images_5a24c9ea31ddb4a1dd46cc0f11b79c8e_playmist_usa_tv_400x400.jpg",
+    "group-title": "News",
+    "channel_name": "USA TV",
+    "url": "https://tvsen3.aynaott.com/dbbcY6NG/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3b8e-7371-9211-d19b9ddac773",
+    "tvg-name": "ABC 7 Bay",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-15/images_08717fb2d69f80063278b28057347175_playmist_abc_news_400x400.jpg",
+    "group-title": "News",
+    "channel_name": "ABC 7 Bay",
+    "url": "https://content.uplynk.com/channel/ext/4413701bf5a1488db55b767f8ae9d4fa/kgo_24x7_news.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3b8a-7550-9145-b7491e246d50",
+    "tvg-name": "ABC News",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-15/images_a806cf1e3ba0981e00a8f340fab8a6f8_playmist_abc_news_400x400.jpg",
+    "group-title": "News",
+    "channel_name": "ABC News",
+    "url": "https://tvsen6.aynaott.com/ABCxzdsdNews/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3c2b-750a-a77e-06dda24907f2",
+    "tvg-name": "ABN",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-14/images_8610a5f1c975ccf85e23a6077de2f1f2_playmist_abn.jpg",
+    "group-title": "News",
+    "channel_name": "ABN",
+    "url": "https://mediaserver.abnvideos.com/streams/abnurdu.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3bfa-71a7-92c2-a1cad28b99e5",
+    "tvg-name": "Accu Weather",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-15/images_a220fac6da08a832112ea4603c9a3c33_playmist_accu_weather_400x400.jpg",
+    "group-title": "News",
+    "channel_name": "Accu Weather",
+    "url": "https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg00684-accuweather-accuweather-plex/playlist.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3b82-7f2d-a547-3c57eaa3dc10",
+    "tvg-name": "Aljazeera News",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-16/images_c8ecdf803a94e7b04619fb573f201146_playmist_aljazeera_news400x400.jpg",
+    "group-title": "News",
+    "channel_name": "Aljazeera News",
+    "url": "https://live-hls-apps-aje-fa.getaj.net/AJE/index.m3u8"
+  },
+  {
+    "tvg-id": "019f400c-f681-70a8-a70f-9858e64716be",
+    "tvg-name": "Amc",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-08/images_9db50b3bbf28a42f76b50d120b2e1db0_playmist_amc_400x400.jpg",
+    "group-title": "News",
+    "channel_name": "Amc",
+    "url": "https://tvsen6.aynaott.com/amc/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3a45-758e-b95b-c37d65b23bea",
+    "tvg-name": "ANB News",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-16/images_86e9d3e52b45d2bb9c321b8168aa01e9_playmist_anb_news_400x400.jpg",
+    "group-title": "News",
+    "channel_name": "ANB News",
+    "url": "https://tvsen6.aynaott.com/H5aeGVSjindex.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3b7d-74a7-8be1-7bd2335ecb31",
+    "tvg-name": "BBC News",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-16/images_bea6d56aa19a59e2bc272736880a97f3_playmist_bbc_news_400x400.jpg",
+    "group-title": "News",
+    "channel_name": "BBC News",
+    "url": "https://tvsen1.aynaott.com/shn6jGTk/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3a41-744d-9181-46d6365a8432",
+    "tvg-name": "Bharat Samachar",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-16/images_d52623f16135dea6bd76f7bdacd4b886_playmist_bharat_samachar_400x400.jpg",
+    "group-title": "News",
+    "channel_name": "Bharat Samachar",
+    "url": "https://tvsen3.aynaott.com/m94BZDYb/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3b88-7be1-b385-a9648ad6a2cd",
+    "tvg-name": "Bloomberg TV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-15/images_e7674693d1fdcfada9523f3b4315d417_playmist_bloomberg_tv_400x400.jpg",
+    "group-title": "News",
+    "channel_name": "Bloomberg TV",
+    "url": "https://tvsen6.aynaott.com/bloombergtv/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3bc3-7f1b-9825-7f2e4bd0ad29",
+    "tvg-name": "CBS TV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-15/images_5cd9688088c2f3b2201b17378bc5081c_playmist_cbs_tv_400x400.jpg",
+    "group-title": "News",
+    "channel_name": "CBS TV",
+    "url": "https://tvsen3.aynaott.com/34fJSjZP/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3b8c-7795-b739-15e0a02e5237",
+    "tvg-name": "CNBC TV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-15/images_e67654cc3d37f4eda1a16709b2b88f6d_playmist_cnbc_tv_400x400.jpg",
+    "group-title": "News",
+    "channel_name": "CNBC TV",
+    "url": "https://tvsen6.aynaott.com/cnbc/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3b80-71c1-84a7-8a74b1a63534",
+    "tvg-name": "CNN",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-16/images_3ce5ce236141274767c8ee8148b88a5d_playmist_cnn_400x400.jpg",
+    "group-title": "News",
+    "channel_name": "CNN",
+    "url": "https://tvsen6.aynaott.com/cnn/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3b84-75ce-b64d-bd376de18c49",
+    "tvg-name": "CP 24",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-16/images_eaacf02e8523f40c627b8234c614963d_playmist_cp_24_400x400.jpg",
+    "group-title": "News",
+    "channel_name": "CP 24",
+    "url": "https://tvsen6.aynaott.com/cp24/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3c2f-7478-8bea-a4b5d50ab7f9",
+    "tvg-name": "Dubai TV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-14/images_ebb056ba1a466e52261aad45829a4160_playmist_dubai_tv400x400.jpg",
+    "group-title": "News",
+    "channel_name": "Dubai TV",
+    "url": "https://dmieigthvllta.cdn.mgmlcdn.com/dubaitvht/smil:dubaitv.stream.smil/chunklist.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3b86-739c-ae1e-0e7c43b5b36d",
+    "tvg-name": "DW News",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-16/images_e9cbcb0f33668b33e4b5dd06143aa1c6_playmist_dw400x400.jpg",
+    "group-title": "News",
+    "channel_name": "DW News",
+    "url": "https://tvsen6.aynaott.com/Qq3s5WR2/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3ba0-791c-8c0e-49ddadbe2415",
+    "tvg-name": "Fox 5",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-15/images_fd05780c80bb076f35db9e243ee2d5f7_playmist_fox_5_400x400.jpg",
+    "group-title": "News",
+    "channel_name": "Fox 5",
+    "url": "https://tvsen6.aynaott.com/fox5/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3ba2-744b-8df9-2fbba4e15303",
+    "tvg-name": "Fox business",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-15/images_bbcc532afe02dc4d7edd093b4f3882c4_playmist_fox_business400x400.jpg",
+    "group-title": "News",
+    "channel_name": "Fox business",
+    "url": "https://tvsen6.aynaott.com/foxbusiness/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3b94-797d-aeee-9faee1bc9b40",
+    "tvg-name": "Fox News",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-15/images_8d6efb719d7295f50d5cbb49e3a11a0f_playmist_fox_news400x400.jpg",
+    "group-title": "News",
+    "channel_name": "Fox News",
+    "url": "https://tvsen6.aynaott.com/foxnews/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3bfc-77c2-821f-120164b37e37",
+    "tvg-name": "Fox Weather",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-15/images_c6a3d7e8d5ba4bd874a958a0c6f16e8e_playmist_fox_weather400x400.jpg",
+    "group-title": "News",
+    "channel_name": "Fox Weather",
+    "url": "https://247wlive.foxweather.com/stream/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3bc7-7ba1-b72d-13662809fa0b",
+    "tvg-name": "FX TV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-15/images_aac39f78c7d0e3df940fda4299217e86_playmist_fx_tv400x400.jpg",
+    "group-title": "News",
+    "channel_name": "FX TV",
+    "url": "https://tvsen3.aynaott.com/jTqkTE8W/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3a3e-796d-8c43-5dcdfb8361b9",
+    "tvg-name": "Hindi Khabar",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-16/images_3f07da3fcbcf0b957c04c18d17bd612b_playmist_hindi_khabar_400x400.jpg",
+    "group-title": "News",
+    "channel_name": "Hindi Khabar",
+    "url": "https://tvsen7.aynaott.com/HindiKhabar/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3a43-72bb-8d94-e1309e246905",
+    "tvg-name": "India Today",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-16/images_c7e1c6e2ec548dee61a1a754955b76e1_playmist_india_today400x400.jpg",
+    "group-title": "News",
+    "channel_name": "India Today",
+    "url": "https://feeds.intoday.in/hltapps/api/master.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3c31-714f-8406-44f43739eec6",
+    "tvg-name": "Iran Press",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-14/images_bf19837ffd975c6258a0f5ee993d73d1_playmist_iran_press400x400.jpg",
+    "group-title": "News",
+    "channel_name": "Iran Press",
+    "url": "https://live.presstv.ir/hls/presstv_5_482/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3b96-7e36-93b7-96e323b3f0a0",
+    "tvg-name": "LIFE TIME",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-15/images_31a018cec62068612c9dc5efa6b13856_playmist_life_time_400x400.jpg",
+    "group-title": "News",
+    "channel_name": "LIFE TIME",
+    "url": "https://tvsen7.aynaott.com/lifetime/index.m3u8"
+  },
+  {
+    "tvg-id": "019efa45-e0fb-7703-b852-f19226e91f76",
+    "tvg-name": "MSNBC News",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-06-24/67dd95c4ed1caa52d3cfec21c4177782.jpg",
+    "group-title": "News",
+    "channel_name": "MSNBC News",
+    "url": "https://tvsen6.aynaott.com/msnbc/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3b9c-7741-ad38-6473e3f02b5d",
+    "tvg-name": "MTV",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-15/images_79fbc39a1e2b6627305b440da7c524d7_playmist_mtv_400x400.jpg",
+    "group-title": "News",
+    "channel_name": "MTV",
+    "url": "https://tvsen6.aynaott.com/mtv/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3b59-7a32-a356-afc80c069215",
+    "tvg-name": "News 1 India",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-16/images_292f3cc412bf05a14544657749e4a0be_playmist_news_1_india_400x400.jpg",
+    "group-title": "News",
+    "channel_name": "News 1 India",
+    "url": "https://tvsen6.aynaott.com/TaVfw58T/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3a5b-7aee-b7ea-2718e8251844",
+    "tvg-name": "News India 24x7",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-16/images_50eab684012024afd51f7d4c4fcc7aa7_playmist_news_india_24x7_400x400.jpg",
+    "group-title": "News",
+    "channel_name": "News India 24x7",
+    "url": "https://tvsen3.aynaott.com/vG7Wpj7e/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-39ef-748a-9af9-aa3d3f488760",
+    "tvg-name": "NFL Network",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-09/images_cadf0a534c4de626332004067cee3103_playmist_nfl_network400x400.jpg",
+    "group-title": "News",
+    "channel_name": "NFL Network",
+    "url": "https://tvsen6.aynaott.com/nfl/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3a3c-71e5-8c69-161f0f895a02",
+    "tvg-name": "Republic TV Bharat",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-16/images_c126a1f2ceda33dad15b71f1d3210b44_playmist_republic_tv_bharat_400x400.jpg",
+    "group-title": "News",
+    "channel_name": "Republic TV Bharat",
+    "url": "https://tvsen6.aynaott.com/faGd3tuq/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3b5b-7c37-a953-8eed8e882836",
+    "tvg-name": "Sadhna Prime News",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-16/images_ad482966b8ccc41fc9bd98dd9382ff0d_playmist_sadhna_prime_news_400x400.jpg",
+    "group-title": "News",
+    "channel_name": "Sadhna Prime News",
+    "url": "https://tvsen3.aynaott.com/P2hjvFHV/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3b90-744e-bd01-4b335dc7cb0b",
+    "tvg-name": "Sky News",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-15/images_245b453c334a625e5049ee95e8a1eb13_playmist_sky_news_400x400.jpg",
+    "group-title": "News",
+    "channel_name": "Sky News",
+    "url": "https://tvsen5.aynaott.com/skynews/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3bfe-7a3a-920f-aa4ed99d20ac",
+    "tvg-name": "Sky News Weather",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-15/images_c9929be9ffadd600f20e2d1c4fd26b95_playmist_sky_news_weather400x400.jpg",
+    "group-title": "News",
+    "channel_name": "Sky News Weather",
+    "url": "https://distro001-gb-hls1-prd.delivery.skycdp.com/easel_cdn/ngrp:weather_loop.stream_all/playlist.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3b9a-7ace-a6b9-3276da2bf5c3",
+    "tvg-name": "TRT World",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-15/images_bad71649a48765ea1bfa3b043822e061_playmist_trt_world_400x400.jpg",
+    "group-title": "News",
+    "channel_name": "TRT World",
+    "url": "https://tvsen7.aynaott.com/TRTWorldHD/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3a3a-76b6-a529-d6cfa50a835f",
+    "tvg-name": "TV9 Bharatvarsh",
+    "tvg-logo": "https://s3.aynaott.com/storage/877703490615895c5df9de7b7c317d26",
+    "group-title": "News",
+    "channel_name": "TV9 Bharatvarsh",
+    "url": "https://tvsen3.aynaott.com/v9NqPxRd/index.m3u8"
+  },
+  {
+    "tvg-id": "019efa45-e069-7f80-a70f-34d4f01b80ea",
+    "tvg-name": "VTV USA",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-14/images_48a2f0e255841fe6c7d77b642dd9a9b1_playmist_vtv_usa_400x400.jpg",
+    "group-title": "News",
+    "channel_name": "VTV USA",
+    "url": "https://tvsen7.aynaott.com/vtvusa/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3c00-718e-9487-01b8e71feb2d",
+    "tvg-name": "Weather SPY",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-15/images_12ff352e97642f2042f8e88a93eca33d_playmist_weather_spy400x400.jpg",
+    "group-title": "News",
+    "channel_name": "Weather SPY",
+    "url": "https://jukin-weatherspy-2-in.samsung.wurl.tv/playlist.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3baa-7783-bf80-236068ce4990",
+    "tvg-name": "Wion",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-15/images_af4d270a6fc7246b2dc185399cce7dbd_playmist_wion_400x400.jpg",
+    "group-title": "News",
+    "channel_name": "Wion",
+    "url": "https://d7x8z4yuq42qn.cloudfront.net/index_7.m3u8"
+  },
+  {
+    "tvg-id": "019de785-39fd-7973-b24f-0a07344fa15f",
+    "tvg-name": "Bahrain Sports 1",
+    "tvg-logo": "https://s3.aynaott.com/storage/0ec8d8b83b191cf915316a1751c8787e",
+    "group-title": "Sports",
+    "channel_name": "Bahrain Sports 1",
+    "url": "https://5c7b683162943.streamlock.net/live/ngrp:sportsone_all/playlist.m3u8"
+  },
+  {
+    "tvg-id": "019efa45-dea3-7243-b8d8-f530f119cd09",
+    "tvg-name": "Bahrain Sports 2",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-14/images_d0852f6f8708108efafbae1e1b32564f_playmist_bahrain_sports_1_400x400.jpg",
+    "group-title": "Sports",
+    "channel_name": "Bahrain Sports 2",
+    "url": "https://tvsen6.aynaott.com/BahrainSports2/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-39d4-7fe5-9ad1-34b1e4fb98c9",
+    "tvg-name": "beIN SPORTS",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-09/images_d42ab13fe207d824670f04d717bfd88b_playmist_mbein_sports_m.jpg",
+    "group-title": "Sports",
+    "channel_name": "beIN SPORTS",
+    "url": "http://fl1.moveonjoy.com/BEIN_SPORTS/index.m3u8"
+  },
+  {
+    "tvg-id": "019efa45-d907-74c0-b05a-87e38a871d8b",
+    "tvg-name": "Bein Sports 1",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-09/images_02eb54f07cbc8c01db3c545aca60d37c_playmist_4g.jpg",
+    "group-title": "Sports",
+    "channel_name": "Bein Sports 1",
+    "url": "https://1nyaler.streamhostingcdn.top/stream/23/index.m3u8"
+  },
+  {
+    "tvg-id": "019de785-3a0b-7492-944c-93b197e0fc39",
+    "tvg-name": "Bleav Football",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-09/images_c1c4607b44cda506121e777ebeafffce_playmist_bleav_football_400x400.jpg",
+    "group-title": "Sports",
+    "channel_name": "Bleav Football",
+    "url": "https://linear-493.frequency.stream/dist/glewedtv/493/hls/master/playlist.m3u8"
+  },
+  {
+    "tvg-id": "019efa45-e8e5-7353-a606-b361cf5f42ce",
+    "tvg-name": "Cricket Gold",
+    "tvg-logo": "https://web.aynaott.com/storage/019dd92f-107c-7056-9e79-e5233f6e51d9/uploads/images/2026-07-09/images_dde39b3fb713d4946a32e2c8ad5db00a_playmist_cricket_gold_400x400.jpg",
+    "group-title": "Sports",
+    "channel_name": "Cricket Gold",
+    "url": "https://tvsen6.aynaott.com/M2W2UR49dmeKbZnmdRzN/index.m3u8"
+  }
+]
