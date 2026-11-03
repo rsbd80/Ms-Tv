@@ -7,7 +7,7 @@ var player = jwplayer("player").setup({
     mute: false,
     height: '100%',
     width: '100%',
-    stretching: 'fill', // পুরো স্ক্রিন জুড়ে ভিডিও ফিট করার জন্য
+    stretching: 'fill', // পুরো স্ক্রিন জুড়ে ভিডিও ফিট করার জন্য (নচ সহ)
     controls: true
 });
 
