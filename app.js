@@ -1,12 +1,12 @@
-// Initialize Clappr player
-    var player = new Clappr.Player({
-        source: "F92YWxIZTO0UOezeus/fet-1/playlist.m3u8",
-        parentId: "#player",
-        autoPlay: true,
+// Initialize JW Player (Clappr বাদ দিয়ে JW Player যুক্ত করা হলো)
+    var player = jwplayer("player").setup({
+        file: "F92YWxIZTO0UOezeus/fet-1/playlist.m3u8",
+        autostart: true,
         mute: false,
         height: '100%',
         width: '100%',
-        disableVideoTagContextMenu: true,
+        stretching: 'fill', // পুরো স্ক্রিন জুড়ে ভিডিও ফিট/ফিল করার জন্য
+        controls: true
     });
 
     // Function to change channel with retry logic
@@ -15,30 +15,35 @@
         overlayMessage.textContent = '১০ সেকেন্ড অপেক্ষা করুন চ্যানেল টি চালু হচ্ছে......';
         overlayMessage.style.display = 'flex';
 
-        player.load(url);
+        // JW Player-এ নতুন URL লোড করা
+        player.load([{ file: url }]);
+        player.play();
 
         let streamStarted = false;
         const maxRetryDuration = 60000; // 60 seconds
         const retryStartTime = Date.now();
 
-        // Remove previous listeners to avoid stacking
-        player.off(Clappr.Events.PLAYER_ERROR);
-        player.off(Clappr.Events.PLAYER_PLAY);
+        // Remove previous listeners
+        player.off('error');
+        player.off('play');
 
         // On successful play
-        player.once(Clappr.Events.PLAYER_PLAY, function () {
+        player.once('play', function () {
             streamStarted = true;
             overlayMessage.style.display = 'none';
         });
 
         // On error, retry for 60 seconds
-        player.on(Clappr.Events.PLAYER_ERROR, function (error) {
+        player.on('error', function (error) {
             if (streamStarted) return;
 
             const elapsed = Date.now() - retryStartTime;
             if (elapsed < maxRetryDuration) {
                 console.warn("Stream error, retrying...", error);
-                setTimeout(() => player.load(url), 2000); // retry every 2s
+                setTimeout(() => {
+                    player.load([{ file: url }]);
+                    player.play();
+                }, 2000); // retry every 2s
             } else {
                 overlayMessage.textContent = 'Error: Stream not available. Please try another channel.';
             }
