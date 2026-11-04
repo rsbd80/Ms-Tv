@@ -1,4 +1,4 @@
-// Initialize JW Player with playlist support and fill mode
+// Initialize JW Player (Clappr বাদ দিয়ে JW Player যুক্ত করা হলো)
 var player = jwplayer("player").setup({
     playlist: [{
         file: "F92YWxIZTO0UOezeus/fet-1/playlist.m3u8"
@@ -7,7 +7,7 @@ var player = jwplayer("player").setup({
     mute: false,
     height: '100%',
     width: '100%',
-    stretching: 'fill', // পুরো স্ক্রিন জুড়ে ভিডিও ফিট করার জন্য (নচ সহ)
+    stretching: 'fill', // পুরো স্ক্রিন জুড়ে ভিডিও ফিট/ফিল করার জন্য (নচ/ক্যামেরার অংশ সহ)
     controls: true
 });
 
@@ -18,9 +18,7 @@ function changeChannel(url, channelCard) {
     overlayMessage.style.display = 'flex';
 
     // JW Player-এ প্লেলিস্ট ফরম্যাটে নতুন URL লোড করা
-    player.load([{
-        file: url
-    }]);
+    player.load([{ file: url }]);
     player.play();
 
     let streamStarted = false;
