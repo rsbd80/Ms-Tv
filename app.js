@@ -1,157 +1,278 @@
-// Initialize Clappr player
-    var player = new Clappr.Player({
-        source: "F92YWxIZTO0UOezeus/fet-1/playlist.m3u8",
-        parentId: "#player",
-        autoPlay: true,
-        mute: false,
-        height: '100%',
-        width: '100%',
-        disableVideoTagContextMenu: true,
-    });
+(() => {
+  "use strict";
 
-    // Function to change channel with retry logic
-    function changeChannel(url, channelCard) {
-        const overlayMessage = document.getElementById('overlay-message');
-        overlayMessage.textContent = '১০ সেকেন্ড অপেক্ষা করুন চ্যানেল টি চালু হচ্ছে......';
-        overlayMessage.style.display = 'flex';
+  const JW_LIBRARY_ID = "YOUR_JWPLAYER_LIBRARY_ID"; // index.html-এও একই library ID বসাবেন
+  const SERVER_JSON = "server.json";
+  const RETRY_LIMIT_MS = 60000;
+  const RETRY_INTERVAL_MS = 3000;
 
-        player.load(url);
+  const playerElement = document.getElementById("player");
+  const overlay = document.getElementById("overlay-message");
+  const playerContainer = document.getElementById("player-container");
+  const fullscreenButton = document.getElementById("custom-fullscreen");
+  const channelsContainer = document.getElementById("channels-container");
+  const categoryTabs = document.getElementById("category-tabs");
 
-        let streamStarted = false;
-        const maxRetryDuration = 60000; // 60 seconds
-        const retryStartTime = Date.now();
+  let player = null;
+  let retryTimer = null;
+  let retryDeadline = 0;
+  let activeUrl = "";
+  let activeCard = null;
+  let playToken = 0;
 
-        // Remove previous listeners to avoid stacking
-        player.off(Clappr.Events.PLAYER_ERROR);
-        player.off(Clappr.Events.PLAYER_PLAY);
+  function showMessage(message) {
+    overlay.textContent = message;
+    overlay.classList.remove("hidden");
+  }
+  function hideMessage() {
+    overlay.classList.add("hidden");
+  }
 
-        // On successful play
-        player.once(Clappr.Events.PLAYER_PLAY, function () {
-            streamStarted = true;
-            overlayMessage.style.display = 'none';
-        });
+  function waitForJWPlayer() {
+    return new Promise((resolve, reject) => {
+      let attempts = 0;
+      const timer = setInterval(() => {
+        if (typeof window.jwplayer === "function") {
+          clearInterval(timer);
+          resolve();
+        } else if (++attempts > 100) {
+          clearInterval(timer);
+          reject(new Error("JW Player library পাওয়া যায়নি। index.html-এ সঠিক JW Player Library ID বসান।"));
+        }
+      }, 100);
+    });
+  }
 
-        // On error, retry for 60 seconds
-        player.on(Clappr.Events.PLAYER_ERROR, function (error) {
-            if (streamStarted) return;
+  async function initializePlayer() {
+    try {
+      if (JW_LIBRARY_ID === "YOUR_JWPLAYER_LIBRARY_ID") {
+        showMessage("JW Player চালু করতে index.html এবং app.js-এ আপনার JW Player Library ID বসান।");
+      }
+      await waitForJWPlayer();
+      player = window.jwplayer("player").setup({
+        file: "",
+        width: "100%",
+        height: "100%",
+        autostart: false,
+        mute: false,
+        controls: true,
+        stretching: "exactfit",
+        displaytitle: false,
+        displaydescription: false,
+        preload: "auto"
+      });
 
-            const elapsed = Date.now() - retryStartTime;
-            if (elapsed < maxRetryDuration) {
-                console.warn("Stream error, retrying...", error);
-                setTimeout(() => player.load(url), 2000); // retry every 2s
-            } else {
-                overlayMessage.textContent = 'Error: Stream not available. Please try another channel.';
-            }
-        });
+      player.on("play", hideMessage);
+      player.on("buffer", () => {
+        if (activeUrl) showMessage("চ্যানেল লোড হচ্ছে, একটু অপেক্ষা করুন...");
+      });
+      player.on("error", () => {
+        if (activeUrl && Date.now() < retryDeadline) {
+          showMessage("স্ট্রিমে সমস্যা হচ্ছে। আবার চেষ্টা করা হচ্ছে...");
+          scheduleRetry(playToken);
+        } else if (activeUrl) {
+          showMessage("চ্যানেলটি চালু করা যাচ্ছে না। অন্য চ্যানেল চেষ্টা করুন।");
+        }
+      });
+      player.on("fullscreen", event => {
+        if (event.fullscreen) applyFullscreenLayout();
+        else restoreFullscreenLayout();
+      });
+    } catch (error) {
+      console.error(error);
+      showMessage(error.message || "JW Player চালু করা যায়নি।");
+    }
+  }
 
-        // Call backend to notify play attempt
-        const streamName = url.split('/')[3];
-        fetch(`http://100.100.100.100/play-channel/${streamName}`)
-            .then(response => response.json())
-            .then(data => console.log("Play-channel API response:", data))
-            .catch(error => console.error("Error calling play-channel API:", error));
+  function scheduleRetry(token) {
+    clearTimeout(retryTimer);
+    if (Date.now() >= retryDeadline || token !== playToken) return;
+    retryTimer = setTimeout(() => {
+      if (token === playToken && activeUrl && player) {
+        try { player.load([{ file: activeUrl, type: "hls" }]); player.play(); }
+        catch (error) { console.warn("Retry failed:", error); }
+      }
+    }, RETRY_INTERVAL_MS);
+  }
 
-        // Highlight the active channel card
-        document.querySelectorAll('.channel-card').forEach(card => {
-            card.classList.remove('active');
-        });
-        channelCard.classList.add('active');
+  function changeChannel(url, channelCard) {
+    if (!url || !player) {
+      if (!player) showMessage("প্লেয়ার প্রস্তুত হচ্ছে অথবা JW Player Library ID সেট করা হয়নি।");
+      return;
+    }
+    playToken++;
+    const thisToken = playToken;
+    activeUrl = url;
+    activeCard = channelCard || null;
+    retryDeadline = Date.now() + RETRY_LIMIT_MS;
+    clearTimeout(retryTimer);
 
-        // Scroll to selected card
-        channelCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
+    showMessage("১০ সেকেন্ড অপেক্ষা করুন, চ্যানেলটি চালু হচ্ছে...");
+    document.querySelectorAll(".channel-card").forEach(card => card.classList.remove("active"));
+    if (activeCard) {
+      activeCard.classList.add("active");
+      activeCard.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
 
-    // Scrollable tab setup
-    function setupTabScrolling() {
-        const tabsContainer = document.querySelector('.category-tabs-scroll');
-        const leftButton = document.querySelector('.scroll-button.left');
-        const rightButton = document.querySelector('.scroll-button.right');
+    try {
+      player.load([{ file: url, type: "hls" }]);
+      player.play();
+      // Retry is also scheduled in case the stream silently stalls without an error event.
+      retryTimer = setTimeout(() => {
+        if (thisToken === playToken && Date.now() < retryDeadline) {
+          try { player.play(); } catch (_) {}
+        }
+      }, 10000);
+    } catch (error) {
+      console.error("Channel load error:", error);
+      scheduleRetry(thisToken);
+    }
+  }
 
-        leftButton.addEventListener('click', () => {
-            tabsContainer.scrollBy({ left: -200, behavior: 'smooth' });
-        });
+  async function enterFullscreen() {
+    try {
+      if (player && typeof player.setFullscreen === "function") {
+        // Use browser fullscreen on the complete player area, not only the video element.
+        if (playerContainer.requestFullscreen) {
+          await playerContainer.requestFullscreen();
+        } else {
+          document.body.classList.add("player-fullscreen-fallback");
+        }
+        applyFullscreenLayout();
+        if (screen.orientation && screen.orientation.lock) {
+          try { await screen.orientation.lock("landscape"); } catch (_) {
+            // CSS rotation below is the fallback on browsers that deny orientation lock.
+          }
+        }
+      }
+    } catch (error) {
+      console.warn("Fullscreen request was not accepted:", error);
+      document.body.classList.add("player-fullscreen-fallback");
+      applyFullscreenLayout();
+    }
+  }
 
-        rightButton.addEventListener('click', () => {
-            tabsContainer.scrollBy({ left: 200, behavior: 'smooth' });
-        });
+  function applyFullscreenLayout() {
+    document.body.classList.add("rotated-fullscreen");
+    fullscreenButton.textContent = "×";
+    fullscreenButton.setAttribute("aria-label", "ফুলস্ক্রিন বন্ধ করুন");
+  }
 
-        tabsContainer.addEventListener('scroll', () => {
-            const scrollLeft = tabsContainer.scrollLeft;
-            const scrollWidth = tabsContainer.scrollWidth;
-            const clientWidth = tabsContainer.clientWidth;
+  function restoreFullscreenLayout() {
+    document.body.classList.remove("rotated-fullscreen", "player-fullscreen-fallback");
+    fullscreenButton.textContent = "⛶";
+    fullscreenButton.setAttribute("aria-label", "ভিডিও ফুলস্ক্রিন করুন");
+    try { if (screen.orientation && screen.orientation.unlock) screen.orientation.unlock(); } catch (_) {}
+  }
 
-            leftButton.style.display = scrollLeft > 0 ? 'flex' : 'none';
-            rightButton.style.display = scrollLeft < (scrollWidth - clientWidth - 1) ? 'flex' : 'none';
-        });
+  async function exitFullscreen() {
+    try {
+      if (document.fullscreenElement && document.exitFullscreen) await document.exitFullscreen();
+    } catch (_) {}
+    restoreFullscreenLayout();
+  }
 
-        tabsContainer.dispatchEvent(new Event('scroll'));
-    }
+  fullscreenButton.addEventListener("click", () => {
+    const isFullscreen = document.fullscreenElement === playerContainer ||
+      document.body.classList.contains("player-fullscreen-fallback");
+    if (isFullscreen) exitFullscreen();
+    else enterFullscreen();
+  });
+  document.addEventListener("fullscreenchange", () => {
+    if (document.fullscreenElement === playerContainer) applyFullscreenLayout();
+    else if (!document.fullscreenElement) restoreFullscreenLayout();
+  });
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") restoreFullscreenLayout();
+  });
 
-    // Show channels under selected category
-    function showChannels(categoryName, channels) {
-        const channelsContainer = document.getElementById('channels-container');
-        channelsContainer.innerHTML = '';
+  function setupTabScrolling() {
+    const tabsContainer = document.querySelector(".category-tabs-scroll");
+    const leftButton = document.querySelector(".scroll-button.left");
+    const rightButton = document.querySelector(".scroll-button.right");
+    if (!tabsContainer || !leftButton || !rightButton) return;
 
-        channels.forEach(channel => {
-            const channelCard = document.createElement('div');
-            channelCard.className = 'channel-card';
-            channelCard.onclick = () => changeChannel(channel.url, channelCard);
+    leftButton.addEventListener("click", () => tabsContainer.scrollBy({ left: -200, behavior: "smooth" }));
+    rightButton.addEventListener("click", () => tabsContainer.scrollBy({ left: 200, behavior: "smooth" }));
 
-            channelCard.innerHTML = `
-                <img src="${channel.image}" alt="${channel.channel_name}">
-                <div class="channel-info">
-                    <div class="channel-name">${channel.channel_name}</div>
-                    <div class="channel-category">${categoryName}</div>
-                </div>
-            `;
+    const updateButtons = () => {
+      leftButton.style.display = tabsContainer.scrollLeft > 0 ? "block" : "none";
+      rightButton.style.display =
+        tabsContainer.scrollLeft < tabsContainer.scrollWidth - tabsContainer.clientWidth - 1 ? "block" : "none";
+    };
+    tabsContainer.addEventListener("scroll", updateButtons);
+    window.addEventListener("resize", updateButtons);
+    updateButtons();
+  }
 
-            channelsContainer.appendChild(channelCard);
-        });
+  function showChannels(categoryName, channels) {
+    channelsContainer.innerHTML = "";
+    if (!Array.isArray(channels) || channels.length === 0) {
+      channelsContainer.innerHTML = '<div class="empty-message">এই ক্যাটাগরিতে কোনো চ্যানেল পাওয়া যায়নি।</div>';
+      return;
+    }
 
-        // Auto-select the first channel
-        if (channels.length > 0) {
-            const firstChannelCard = channelsContainer.querySelector('.channel-card');
-            changeChannel(channels[0].url, firstChannelCard);
-        }
-    }
+    channels.forEach(channel => {
+      const card = document.createElement("button");
+      card.type = "button";
+      card.className = "channel-card";
+      card.setAttribute("aria-label", channel.channel_name || "চ্যানেল");
+      const image = document.createElement("img");
+      image.src = channel.image || "";
+      image.alt = channel.channel_name || "Channel logo";
+      image.loading = "lazy";
+      image.onerror = () => { image.style.visibility = "hidden"; };
+      const info = document.createElement("div");
+      info.className = "channel-info";
+      const name = document.createElement("div");
+      name.className = "channel-name";
+      name.textContent = channel.channel_name || "Unnamed channel";
+      info.appendChild(name);
+      card.append(image, info);
+      card.addEventListener("click", () => changeChannel(channel.url, card));
+      channelsContainer.appendChild(card);
+    });
 
-    // Fetch categories and channels
-    fetch('server.json')
-        .then(response => response.json())
-        .then(data => {
-            const categoryTabs = document.getElementById('category-tabs');
-            let firstCategory = true;
+    const firstCard = channelsContainer.querySelector(".channel-card");
+    if (firstCard) firstCard.click();
+  }
 
-            for (const category in data) {
-                if (data.hasOwnProperty(category)) {
-                    const tab = document.createElement('div');
-                    tab.className = 'category-tab';
-                    if (firstCategory) {
-                        tab.classList.add('active');
-                        firstCategory = false;
-                    }
-                    tab.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+  function loadPlaylist() {
+    fetch(SERVER_JSON, { cache: "no-store" })
+      .then(response => {
+        if (!response.ok) throw new Error("server.json পাওয়া যায়নি (HTTP " + response.status + ")");
+        return response.json();
+      })
+      .then(data => {
+        categoryTabs.innerHTML = "";
+        const categories = Object.keys(data || {});
+        if (!categories.length) throw new Error("server.json-এ কোনো ক্যাটাগরি নেই।");
 
-                    tab.addEventListener('click', function () {
-                        document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
-                        this.classList.add('active');
-                        showChannels(category, data[category]);
-                    });
+        categories.forEach((category, index) => {
+          const tab = document.createElement("button");
+          tab.type = "button";
+          tab.className = "category-tab" + (index === 0 ? " active" : "");
+          tab.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+          tab.addEventListener("click", () => {
+            document.querySelectorAll(".category-tab").forEach(item => item.classList.remove("active"));
+            tab.classList.add("active");
+            showChannels(category, data[category]);
+          });
+          categoryTabs.appendChild(tab);
+        });
 
-                    categoryTabs.appendChild(tab);
-                }
-            }
+        showChannels(categories[0], data[categories[0]]);
+        setupTabScrolling();
+      })
+      .catch(error => {
+        console.error("Playlist loading error:", error);
+        channelsContainer.innerHTML = "";
+        showMessage("চ্যানেল তালিকা লোড হয়নি: " + error.message);
+      });
+  }
 
-            // Auto-select first category
-            if (Object.keys(data).length > 0) {
-                const firstCategoryKey = Object.keys(data)[0];
-                showChannels(firstCategoryKey, data[firstCategoryKey]);
-            }
-
-            setupTabScrolling();
-        })
-        .catch(error => {
-            console.error('Error fetching playlist:', error);
-            document.getElementById('channels-container').innerHTML =
-                '<div style="padding: 20px; text-align: center; color: #606060;">Error loading channels. Please try again later.</div>';
-        });
+  initializePlayer().then(() => {
+    // Start playlist loading independently; cards remain available even if JW setup fails.
+    loadPlaylist();
+  });
+})();
