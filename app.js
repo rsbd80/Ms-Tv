@@ -1,7 +1,7 @@
 // ===== Initialize Clappr player with HLS support =====
 var player = new Clappr.Player({
-    // ⚠️ ফাঁকা রাখবেন না — একটি ডিফল্ট HLS URL দিন
-    source: "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+    // শুরুতে ফাঁকা রাখা হলো, নিচে server.json থেকে প্রথম চ্যানেল অটো লোড হবে
+    source: "", 
     parentId: "#player",
     autoPlay: true,
     mute: false,
@@ -13,6 +13,8 @@ var player = new Clappr.Player({
 
 // ===== Change channel with retry logic =====
 function changeChannel(url, channelCard) {
+    if (!url) return;
+
     const overlayMessage = document.getElementById('overlay-message');
     overlayMessage.textContent = '১০ সেকেন্ড অপেক্ষা করুন চ্যানেল টি চালু হচ্ছে......';
     overlayMessage.style.display = 'flex';
@@ -111,7 +113,7 @@ function showChannels(categoryName, channels) {
 
     if (!channels || !Array.isArray(channels)) {
         channelsContainer.innerHTML =
-            '<div style="padding: 20px; text-align: center; color: #aaa;">কোনো চ্যানেল পাওয়া যায়নি</div>';
+            '<div style="padding: 20px; text-align: center; color: #aaa; grid-column: 1/-1;">কোনো চ্যানেল পাওয়া যায়নি</div>';
         return;
     }
 
@@ -120,6 +122,7 @@ function showChannels(categoryName, channels) {
         channelCard.className = 'channel-card';
         channelCard.onclick = () => changeChannel(channel.url, channelCard);
 
+        // কার্ডের ভেতরের ডিজাইন আগের মতোই রাখা হয়েছে
         channelCard.innerHTML = `
             <img src="${channel.image}" alt="${channel.channel_name}">
             <div class="channel-info">
@@ -189,6 +192,6 @@ fetch('server.json')
         const container = document.getElementById('channels-container');
         if (container) {
             container.innerHTML =
-                '<div style="padding: 20px; text-align: center; color: #ff5555;">চ্যানেল লোড করতে সমস্যা হচ্ছে। server.json ফাইলটি চেক করুন।</div>';
+                '<div style="padding: 20px; text-align: center; color: #ff5555; grid-column: 1/-1;">চ্যানেল লোড করতে সমস্যা হচ্ছে। server.json ফাইলটি চেক করুন।</div>';
         }
     });
