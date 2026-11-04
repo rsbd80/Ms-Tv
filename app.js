@@ -1,14 +1,12 @@
-// Initialize JW Player (Clappr বাদ দিয়ে JW Player যুক্ত করা হলো)
-var player = jwplayer("player").setup({
-    playlist: [{
-        file: "F92YWxIZTO0UOezeus/fet-1/playlist.m3u8"
-    }],
-    autostart: true,
+// Initialize Clappr player
+var player = new Clappr.Player({
+    source: "", // শুরুতে ফাঁকা রাখা হলো, ক্যাটাগরি লোড হওয়ার পর অটো প্লে হবে
+    parentId: "#player",
+    autoPlay: true,
     mute: false,
     height: '100%',
     width: '100%',
-    stretching: 'fill', // পুরো স্ক্রিন জুড়ে ভিডিও ফিট/ফিল করার জন্য (নচ/ক্যামেরার অংশ সহ)
-    controls: true
+    disableVideoTagContextMenu: true,
 });
 
 // Function to change channel with retry logic
@@ -17,55 +15,53 @@ function changeChannel(url, channelCard) {
     overlayMessage.textContent = '১০ সেকেন্ড অপেক্ষা করুন চ্যানেল টি চালু হচ্ছে......';
     overlayMessage.style.display = 'flex';
 
-    // JW Player-এ প্লেলিস্ট ফরম্যাটে নতুন URL লোড করা
-    player.load([{ file: url }]);
-    player.play();
+    player.load(url);
 
     let streamStarted = false;
     const maxRetryDuration = 60000; // 60 seconds
     const retryStartTime = Date.now();
 
     // Remove previous listeners to avoid stacking
-    player.off('error');
-    player.off('play');
+    player.off(Clappr.Events.PLAYER_ERROR);
+    player.off(Clappr.Events.PLAYER_PLAY);
 
     // On successful play
-    player.once('play', function () {
+    player.once(Clappr.Events.PLAYER_PLAY, function () {
         streamStarted = true;
         overlayMessage.style.display = 'none';
     });
 
     // On error, retry for 60 seconds
-    player.on('error', function (error) {
+    player.on(Clappr.Events.PLAYER_ERROR, function (error) {
         if (streamStarted) return;
 
         const elapsed = Date.now() - retryStartTime;
         if (elapsed < maxRetryDuration) {
             console.warn("Stream error, retrying...", error);
-            setTimeout(() => {
-                player.load([{ file: url }]);
-                player.play();
-            }, 2000); // retry every 2s
+            setTimeout(() => player.load(url), 2000); // retry every 2s
         } else {
             overlayMessage.textContent = 'Error: Stream not available. Please try another channel.';
         }
     });
 
-    // Call backend to notify play attempt
-    const streamName = url.split('/')[3];
-    fetch(`http://100.100.100.100/play-channel/${streamName}`)
-        .then(response => response.json())
-        .then(data => console.log("Play-channel API response:", data))
-        .catch(error => console.error("Error calling play-channel API:", error));
+    // Call backend to notify play attempt if URL has enough parts
+    if (url && url.split('/').length > 3) {
+        const streamName = url.split('/')[3];
+        fetch(`http://100.100.100.100/play-channel/${streamName}`)
+            .then(response => response.json())
+            .then(data => console.log("Play-channel API response:", data))
+            .catch(error => console.error("Error calling play-channel API:", error));
+    }
 
     // Highlight the active channel card
     document.querySelectorAll('.channel-card').forEach(card => {
         card.classList.remove('active');
     });
-    channelCard.classList.add('active');
-
-    // Scroll to selected card
-    channelCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    if (channelCard) {
+        channelCard.classList.add('active');
+        // Scroll to selected card
+        channelCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
 }
 
 // Scrollable tab setup
@@ -73,6 +69,8 @@ function setupTabScrolling() {
     const tabsContainer = document.querySelector('.category-tabs-scroll');
     const leftButton = document.querySelector('.scroll-button.left');
     const rightButton = document.querySelector('.scroll-button.right');
+
+    if (!tabsContainer || !leftButton || !rightButton) return;
 
     leftButton.addEventListener('click', () => {
         tabsContainer.scrollBy({ left: -200, behavior: 'smooth' });
@@ -97,7 +95,13 @@ function setupTabScrolling() {
 // Show channels under selected category
 function showChannels(categoryName, channels) {
     const channelsContainer = document.getElementById('channels-container');
+    if (!channelsContainer) return;
     channelsContainer.innerHTML = '';
+
+    if (!channels || !Array.isArray(channels)) {
+        channelsContainer.innerHTML = '<div style="padding: 20px; text-align: center; color: #aaa;">কোনো চ্যানেল পাওয়া যায়নি</div>';
+        return;
+    }
 
     channels.forEach(channel => {
         const channelCard = document.createElement('div');
@@ -122,15 +126,30 @@ function showChannels(categoryName, channels) {
     }
 }
 
-// Fetch categories and channels
+// Fetch categories and channels from server.json
 fetch('server.json')
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('server.json ফাইল পাওয়া যায়নি বা লোড করা যায়নি');
+        }
+        return response.json();
+    })
     .then(data => {
         const categoryTabs = document.getElementById('category-tabs');
+        if (!categoryTabs) return;
+        categoryTabs.innerHTML = '';
+        
         let firstCategory = true;
+        let firstCategoryKey = null;
+        let firstCategoryData = null;
 
         for (const category in data) {
             if (data.hasOwnProperty(category)) {
+                if (!firstCategoryKey) {
+                    firstCategoryKey = category;
+                    firstCategoryData = data[category];
+                }
+
                 const tab = document.createElement('div');
                 tab.className = 'category-tab';
                 if (firstCategory) {
@@ -149,16 +168,17 @@ fetch('server.json')
             }
         }
 
-        // Auto-select first category
-        if (Object.keys(data).length > 0) {
-            const firstCategoryKey = Object.keys(data)[0];
-            showChannels(firstCategoryKey, data[firstCategoryKey]);
+        // Auto-select first category channels
+        if (firstCategoryKey) {
+            showChannels(firstCategoryKey, firstCategoryData);
         }
 
         setupTabScrolling();
     })
     .catch(error => {
         console.error('Error fetching playlist:', error);
-        document.getElementById('channels-container').innerHTML =
-            '<div style="padding: 20px; text-align: center; color: #606060;">Error loading channels. Please try again later.</div>';
+        const container = document.getElementById('channels-container');
+        if (container) {
+            container.innerHTML = '<div style="padding: 20px; text-align: center; color: #ff5555;">চ্যানেল লোড করতে সমস্যা হচ্ছে। server.json ফাইলটি চেক করুন।</div>';
+        }
     });
