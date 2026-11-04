@@ -1,50 +1,62 @@
-// Initialize Clappr player
+// ===== Initialize Clappr player with HLS support =====
 var player = new Clappr.Player({
-    source: "", // শুরুতে ফাঁকা রাখা হলো, ক্যাটাগরি লোড হওয়ার পর অটো প্লে হবে
+    // ⚠️ ফাঁকা রাখবেন না — একটি ডিফল্ট HLS URL দিন
+    source: "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
     parentId: "#player",
     autoPlay: true,
     mute: false,
     height: '100%',
     width: '100%',
     disableVideoTagContextMenu: true,
+    plugins: [HlsjsPlayback],   // ✅ HLS প্লাগইন
 });
 
-// Function to change channel with retry logic
+// ===== Change channel with retry logic =====
 function changeChannel(url, channelCard) {
     const overlayMessage = document.getElementById('overlay-message');
     overlayMessage.textContent = '১০ সেকেন্ড অপেক্ষা করুন চ্যানেল টি চালু হচ্ছে......';
     overlayMessage.style.display = 'flex';
 
-    player.load(url);
-
-    let streamStarted = false;
-    const maxRetryDuration = 60000; // 60 seconds
-    const retryStartTime = Date.now();
-
-    // Remove previous listeners to avoid stacking
+    // পুরনো listener সরান
     player.off(Clappr.Events.PLAYER_ERROR);
     player.off(Clappr.Events.PLAYER_PLAY);
 
-    // On successful play
+    player.load(url);
+
+    let streamStarted = false;
+    let retryTimer = null;
+    const maxRetryDuration = 60000; // 60 seconds
+    const retryStartTime = Date.now();
+
+    // সফলভাবে চালু হলে
     player.once(Clappr.Events.PLAYER_PLAY, function () {
         streamStarted = true;
+        if (retryTimer) clearTimeout(retryTimer);
         overlayMessage.style.display = 'none';
     });
 
-    // On error, retry for 60 seconds
-    player.on(Clappr.Events.PLAYER_ERROR, function (error) {
+    // এরর হলে ৬০ সেকেন্ড পর্যন্ত retry
+    const onError = function (error) {
         if (streamStarted) return;
 
         const elapsed = Date.now() - retryStartTime;
         if (elapsed < maxRetryDuration) {
             console.warn("Stream error, retrying...", error);
-            setTimeout(() => player.load(url), 2000); // retry every 2s
+            if (retryTimer) clearTimeout(retryTimer);
+            retryTimer = setTimeout(() => {
+                player.off(Clappr.Events.PLAYER_ERROR);
+                player.load(url);
+                player.once(Clappr.Events.PLAYER_ERROR, onError);
+            }, 2000);
         } else {
             overlayMessage.textContent = 'Error: Stream not available. Please try another channel.';
+            player.off(Clappr.Events.PLAYER_ERROR, onError);
         }
-    });
+    };
 
-    // Call backend to notify play attempt if URL has enough parts
+    player.once(Clappr.Events.PLAYER_ERROR, onError);
+
+    // Backend notify (URL-এ যথেষ্ট অংশ থাকলে)
     if (url && url.split('/').length > 3) {
         const streamName = url.split('/')[3];
         fetch(`http://100.100.100.100/play-channel/${streamName}`)
@@ -53,18 +65,17 @@ function changeChannel(url, channelCard) {
             .catch(error => console.error("Error calling play-channel API:", error));
     }
 
-    // Highlight the active channel card
+    // Active channel highlight
     document.querySelectorAll('.channel-card').forEach(card => {
         card.classList.remove('active');
     });
     if (channelCard) {
         channelCard.classList.add('active');
-        // Scroll to selected card
         channelCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 }
 
-// Scrollable tab setup
+// ===== Scrollable tab setup =====
 function setupTabScrolling() {
     const tabsContainer = document.querySelector('.category-tabs-scroll');
     const leftButton = document.querySelector('.scroll-button.left');
@@ -92,14 +103,15 @@ function setupTabScrolling() {
     tabsContainer.dispatchEvent(new Event('scroll'));
 }
 
-// Show channels under selected category
+// ===== Show channels under selected category =====
 function showChannels(categoryName, channels) {
     const channelsContainer = document.getElementById('channels-container');
     if (!channelsContainer) return;
     channelsContainer.innerHTML = '';
 
     if (!channels || !Array.isArray(channels)) {
-        channelsContainer.innerHTML = '<div style="padding: 20px; text-align: center; color: #aaa;">কোনো চ্যানেল পাওয়া যায়নি</div>';
+        channelsContainer.innerHTML =
+            '<div style="padding: 20px; text-align: center; color: #aaa;">কোনো চ্যানেল পাওয়া যায়নি</div>';
         return;
     }
 
@@ -119,26 +131,24 @@ function showChannels(categoryName, channels) {
         channelsContainer.appendChild(channelCard);
     });
 
-    // Auto-select the first channel
+    // Auto-select first channel
     if (channels.length > 0) {
         const firstChannelCard = channelsContainer.querySelector('.channel-card');
         changeChannel(channels[0].url, firstChannelCard);
     }
 }
 
-// Fetch categories and channels from server.json
+// ===== Fetch categories and channels from server.json =====
 fetch('server.json')
     .then(response => {
-        if (!response.ok) {
-            throw new Error('server.json ফাইল পাওয়া যায়নি বা লোড করা যায়নি');
-        }
+        if (!response.ok) throw new Error('server.json লোড করা যায়নি');
         return response.json();
     })
     .then(data => {
         const categoryTabs = document.getElementById('category-tabs');
         if (!categoryTabs) return;
         categoryTabs.innerHTML = '';
-        
+
         let firstCategory = true;
         let firstCategoryKey = null;
         let firstCategoryData = null;
@@ -168,7 +178,6 @@ fetch('server.json')
             }
         }
 
-        // Auto-select first category channels
         if (firstCategoryKey) {
             showChannels(firstCategoryKey, firstCategoryData);
         }
@@ -179,6 +188,7 @@ fetch('server.json')
         console.error('Error fetching playlist:', error);
         const container = document.getElementById('channels-container');
         if (container) {
-            container.innerHTML = '<div style="padding: 20px; text-align: center; color: #ff5555;">চ্যানেল লোড করতে সমস্যা হচ্ছে। server.json ফাইলটি চেক করুন।</div>';
+            container.innerHTML =
+                '<div style="padding: 20px; text-align: center; color: #ff5555;">চ্যানেল লোড করতে সমস্যা হচ্ছে। server.json ফাইলটি চেক করুন।</div>';
         }
     });
